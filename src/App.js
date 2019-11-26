@@ -5,15 +5,12 @@ class App extends React.Component {
   state = {
     count: 0
   };
-
   plus = () => {
-    console.log("Plus");
+    this.setState(current => ({ count: current.count + 1 }));
   };
-
   minus = () => {
-    console.log("Minus");
+    this.setState({ count: this.state.count - 1 });
   };
-
   render() {
     return (
       <div>
