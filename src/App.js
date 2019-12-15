@@ -2,11 +2,27 @@ import React from "react";
 
 class App extends React.Component {
   state = {
-    isLoading: true
+    count: 0
   };
+
+  add = () => {
+    this.setState(current => ({ count: current.count + 1 }));
+  };
+
+  minus = () => {
+    this.setState(current => ({ count: current.count - 1 }));
+  };
+
+  minust = () => {};
+
   render() {
-    const { isLoading } = this.state;
-    return <div>{this.state.isLoading ? "Loading" : "We are ready"}</div>;
+    return (
+      <div>
+        <h1>The counted Number is : {this.state.count}</h1>
+        <button onClick={this.add}>add</button>
+        <button onClick={this.minus}>minus</button>
+      </div>
+    );
   }
 }
 
